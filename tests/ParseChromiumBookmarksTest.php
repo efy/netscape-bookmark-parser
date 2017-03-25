@@ -25,6 +25,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
             $bkm[0]['title']
         );
         $this->assertEquals('https://cozy.io/en/', $bkm[0]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[0]['icon']);
 
         $this->assertEquals('', $bkm[1]['note']);
         $this->assertEquals('1', $bkm[1]['pub']);
@@ -35,6 +36,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
             $bkm[1]['title']
         );
         $this->assertEquals('https://framasoft.org/', $bkm[1]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[1]['icon']);
 
         $this->assertEquals('', $bkm[2]['note']);
         $this->assertEquals('1', $bkm[2]['pub']);
@@ -42,6 +44,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('1466009167', $bkm[2]['time']);
         $this->assertEquals('The Linux Kernel Archives', $bkm[2]['title']);
         $this->assertEquals('https://www.kernel.org/', $bkm[2]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[2]['icon']);
 
         $this->assertEquals('', $bkm[3]['note']);
         $this->assertEquals('1', $bkm[3]['pub']);
@@ -49,6 +52,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('1466009412', $bkm[3]['time']);
         $this->assertEquals('Regex Crossword', $bkm[3]['title']);
         $this->assertEquals('https://regexcrossword.com/', $bkm[3]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[3]['icon']);
 
         $this->assertEquals('', $bkm[4]['note']);
         $this->assertEquals('1', $bkm[4]['pub']);
@@ -56,6 +60,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('1466009435', $bkm[4]['time']);
         $this->assertEquals('WINDOWS93', $bkm[4]['title']);
         $this->assertEquals('http://www.windows93.net/', $bkm[4]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[4]['icon']);
 
         $this->assertEquals('', $bkm[5]['note']);
         $this->assertEquals('1', $bkm[5]['pub']);
@@ -72,6 +77,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
            .'-a-k-a-monkey-sort',
             $bkm[5]['uri']
         );
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[5]['icon']);
 
         $this->assertEquals('', $bkm[6]['note']);
         $this->assertEquals('1', $bkm[6]['pub']);
@@ -86,6 +92,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
             'https://github.com/lhartikk/ArnoldC',
             $bkm[6]['uri']
         );
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[6]['icon']);
 
         $this->assertEquals('', $bkm[7]['note']);
         $this->assertEquals('1', $bkm[7]['pub']);
@@ -96,6 +103,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
             $bkm[7]['title']
         );
         $this->assertEquals('https://openclassrooms.com/', $bkm[7]['uri']);
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[7]['icon']);
 
         $this->assertEquals('', $bkm[8]['note']);
         $this->assertEquals('1', $bkm[8]['pub']);
@@ -110,6 +118,7 @@ class ParseChromiumBookmarksTest extends PHPUnit_Framework_TestCase
            .'timeline-of-the-elves-in-tolkiens-works/',
             $bkm[8]['uri']
         );
+        $this->assertRegExp('/^data:image\/png;base64,.+/', $bkm[8]['icon']);
     }
 
     /**
