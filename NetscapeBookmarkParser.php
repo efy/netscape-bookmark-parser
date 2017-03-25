@@ -60,12 +60,13 @@ class NetscapeBookmarkParser
      *     (
      *         [0] => Array
      *             (
-     *                 [note]  => Some comments about this link
-     *                 [pub]   => 1
-     *                 [tags]  => a list of tags
-     *                 [time]  => 1459371397
-     *                 [title] => Some page
-     *                 [uri]   => http://domain.tld:5678/some-page.html
+     *                 [note]      => Some comments about this link
+     *                 [pub]       => 1
+     *                 [tags]      => a list of tags
+     *                 [time]      => 1459371397
+     *                 [title]     => Some page
+     *                 [uri]       => http://domain.tld:5678/some-page.html
+     *                 [icon]      => [base64 encoded png]
      *             )
      *         [1] => Array
      *             (
@@ -147,6 +148,12 @@ class NetscapeBookmarkParser
                     $this->items[$i]['pub'] = $this->parseBoolean($m10[2], true) ? 0 : 1;
                 } else {
                     $this->items[$i]['pub'] = $this->defaultPub;
+                }
+
+                if (preg_match('/icon="(.*?)"/i', $line, $m11)) {
+                    $this->items[$i]['icon'] = $m11[1];
+                } else {
+                    $this->items[$i]['icon'] = '';
                 }
 
                 $i++;
